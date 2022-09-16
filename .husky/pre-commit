@@ -7,3 +7,4 @@
 prevent_pushing_to_master
 prevent_conflict_markers
 lint_staged_files
+
