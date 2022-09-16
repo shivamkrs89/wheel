@@ -3,7 +3,7 @@ import React from "react";
 import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Dropdown, Tag, Tooltip, Avatar } from "neetoui";
 
-import { calculateCreatedAgo, formatDatetoweekDay } from "./utils";
+import { calculateCreatedAgo, formatDatetoWeekDay } from "./utils";
 
 const NotesList = ({ key, note, setSelectedNoteIds, setShowDeleteAlert }) => {
   const handleDelete = () => {
@@ -36,7 +36,7 @@ const NotesList = ({ key, note, setSelectedNoteIds, setShowDeleteAlert }) => {
         <div className="item-center ml-auto flex space-x-2">
           <Clock size="20" />
           <Tooltip
-            content={formatDatetoweekDay(note.created_at)}
+            content={formatDatetoWeekDay(note.created_at)}
             position="bottom"
           >
             <Typography style="body3">
