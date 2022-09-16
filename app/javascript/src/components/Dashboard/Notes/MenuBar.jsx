@@ -5,9 +5,9 @@ import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
 const NotesMenuBar = ({ showMenu }) => {
-  const [isSearchCollapsedSegments, setIsSearchCollapsedSegments] =
+  const [isSegmentsSearchCollapsed, setIsSegmentsSearchCollapsed] =
     useState(true);
-  const [isSearchCollapsedTags, setIsSearchCollapsedTags] = useState(true);
+  const [isTagsSearchCollapsed, setIsTagsSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
@@ -21,7 +21,9 @@ const NotesMenuBar = ({ showMenu }) => {
             {
               icon: Search,
               onClick: () =>
-                setIsSearchCollapsedSegments(!isSearchCollapsedSegments),
+                setIsSegmentsSearchCollapsed(
+                  prevCollapsedState => !prevCollapsedState
+                ),
             },
           ]}
         >
@@ -35,8 +37,8 @@ const NotesMenuBar = ({ showMenu }) => {
           </Typography>
         </MenuBar.SubTitle>
         <MenuBar.Search
-          collapse={isSearchCollapsedSegments}
-          onCollapse={() => setIsSearchCollapsedSegments(true)}
+          collapse={isSegmentsSearchCollapsed}
+          onCollapse={() => setIsSegmentsSearchCollapsed(true)}
         />
         <MenuBar.Block count={80} label="Europe" />
         <MenuBar.Block count={60} label="Middle-East" />
@@ -45,7 +47,10 @@ const NotesMenuBar = ({ showMenu }) => {
           iconProps={[
             {
               icon: Search,
-              onClick: () => setIsSearchCollapsedTags(!isSearchCollapsedTags),
+              onClick: () =>
+                setIsTagsSearchCollapsed(
+                  prevCollapsedState => !prevCollapsedState
+                ),
             },
             {
               icon: Settings,
@@ -65,8 +70,8 @@ const NotesMenuBar = ({ showMenu }) => {
           </Typography>
         </MenuBar.SubTitle>
         <MenuBar.Search
-          collapse={isSearchCollapsedTags}
-          onCollapse={() => setIsSearchCollapsedTags(!isSearchCollapsedTags)}
+          collapse={isTagsSearchCollapsed}
+          onCollapse={() => setIsTagsSearchCollapsed(true)}
         />
         <MenuBar.Block count={80} label="Europe" />
         <MenuBar.Block count={60} label="Middle-East" />
