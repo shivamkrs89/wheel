@@ -71,7 +71,7 @@ const NotesMenuBar = ({ showMenu }) => {
         </MenuBar.SubTitle>
         <MenuBar.Search
           collapse={isTagsSearchCollapsed}
-          onCollapse={() => setIsTagsSearchCollapsed(!isTagsSearchCollapsed)}
+          onCollapse={() => setIsTagsSearchCollapsed(true)}
         />
         <MenuBar.Block count={80} label="Europe" />
         <MenuBar.Block count={60} label="Middle-East" />
