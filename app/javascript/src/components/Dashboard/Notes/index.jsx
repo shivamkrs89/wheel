@@ -55,7 +55,7 @@ const Notes = () => {
             />
           }
           menuBarToggle={() => {
-            setShowMenu(!showMenu);
+            setShowMenu(showMenuStatus => !showMenuStatus);
           }}
           searchProps={{
             value: searchTerm,
