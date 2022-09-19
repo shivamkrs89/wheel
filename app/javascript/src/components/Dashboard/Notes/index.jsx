@@ -17,7 +17,7 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
+  const [selectedNoteId, setSelectedNoteId] = useState([]);
   const [notes, setNotes] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -68,7 +68,7 @@ const Notes = () => {
             <NotesList
               key={note.id}
               note={note}
-              setSelectedNoteIds={setSelectedNoteIds}
+              setSelectedNoteId={setSelectedNoteId}
               setShowDeleteAlert={setShowDeleteAlert}
             />
           ))
@@ -89,8 +89,8 @@ const Notes = () => {
         {showDeleteAlert && (
           <DeleteAlert
             refetch={fetchNotes}
-            selectedNoteIds={selectedNoteIds}
-            setSelectedNoteIds={setSelectedNoteIds}
+            selectedNoteId={selectedNoteId}
+            setSelectedNoteId={setSelectedNoteId}
             onClose={() => setShowDeleteAlert(false)}
           />
         )}

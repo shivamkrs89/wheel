@@ -5,10 +5,10 @@ import { Typography, Dropdown, Tag, Tooltip, Avatar } from "neetoui";
 
 import { calculateCreatedAgo, formatDatetoWeekDay } from "./utils";
 
-const NotesList = ({ key, note, setSelectedNoteIds, setShowDeleteAlert }) => {
+const NotesList = ({ note, setSelectedNoteId, setShowDeleteAlert }) => {
   const handleDelete = () => {
+    setSelectedNoteId(note.id);
     setShowDeleteAlert(true);
-    setSelectedNoteIds(key);
   };
 
   return (
