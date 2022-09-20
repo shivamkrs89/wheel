@@ -8,9 +8,9 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import MenuBar from "./MenuBar";
 import NotesList from "./NotesList";
 import NewNotePane from "./Pane/Create";
+import SideMenu from "./SideMenu";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +43,7 @@ const Notes = () => {
 
   return (
     <>
-      <MenuBar showMenu={showMenu} />
+      <SideMenu showMenu={showMenu} />
       <Container>
         <Header
           title="All Notes"
