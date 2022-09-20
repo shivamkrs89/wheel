@@ -2,14 +2,14 @@ import React from "react";
 
 import { Table as NeetoUITable } from "neetoui";
 
-import { CONTACTS_TABLE_COLUMN } from "./column";
+import { buildContactsTableColumnData } from "./utils";
 
 import { CONTACTS_DETAILS } from "../constants";
 
 const Table = () => (
   <div className="w-full">
     <NeetoUITable
-      columnData={CONTACTS_TABLE_COLUMN}
+      columnData={buildContactsTableColumnData()}
       currentPageNumber={2}
       defaultPageSize={5}
       rowData={CONTACTS_DETAILS}
