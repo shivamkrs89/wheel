@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import MenuBar from "./MenuBar";
+import SideMenu from "./SideMenu";
 import Table from "./Table";
 
 const Contacts = () => {
@@ -12,7 +12,7 @@ const Contacts = () => {
 
   return (
     <>
-      <MenuBar showMenu={showMenu} />
+      <SideMenu showMenu={showMenu} />
       <Container>
         <Header
           actionBlock={<Button icon="ri-add-line" label="Add Contacts" />}

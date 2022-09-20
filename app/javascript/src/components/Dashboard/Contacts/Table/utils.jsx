@@ -12,10 +12,8 @@ export const buildContactsTableColumnData = () => [
     render: (name, { role, imageUrl }) => (
       <div className="flex space-x-3">
         <Avatar size="large" user={{ imageUrl, name }} />
-        <div>
-          <Typography style="h4">{name}</Typography>
-          <Typography style="body2">{role}</Typography>
-        </div>
+        <Typography style="h4">{name}</Typography>
+        <Typography style="body2">{role}</Typography>
       </div>
     ),
   },
