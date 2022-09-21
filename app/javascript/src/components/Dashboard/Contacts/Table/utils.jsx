@@ -3,7 +3,7 @@ import React from "react";
 import { MenuHorizontal } from "neetoicons";
 import { Dropdown, Typography, Avatar } from "neetoui";
 
-export const buildContactsTableColumnData = () => [
+export const buildContactsTableColumnData = setshowDeleteAlert => [
   {
     title: "Name & Role",
     width: "30%",
@@ -36,7 +36,12 @@ export const buildContactsTableColumnData = () => [
     render: () => (
       <Dropdown buttonStyle="text" icon={MenuHorizontal}>
         <li className="m-1">Edit</li>
-        <li className="m-1" onClick={() => {}}>
+        <li
+          className="m-1"
+          onClick={() => {
+            setshowDeleteAlert(true);
+          }}
+        >
           Delete
         </li>
       </Dropdown>

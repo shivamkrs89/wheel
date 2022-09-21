@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button } from "neetoui";
+import { Button, Alert, Toastr } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import NewContactPane from "./Pane/Create";
@@ -11,6 +11,12 @@ const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+
+  const handleSubmit = () => {
+    setShowDeleteAlert(false);
+    Toastr.success("Contact deleted successfully.");
+  };
 
   return (
     <>
@@ -34,10 +40,19 @@ const Contacts = () => {
             placeholder: " Search Name, Email etc.",
           }}
         />
-        <Table />
+        <Table setshowDeleteAlert={setShowDeleteAlert} />
         <NewContactPane
           setShowPane={setShowNewContactPane}
           showPane={showNewContactPane}
+        />
+        <Alert
+          closeButton={false}
+          isOpen={showDeleteAlert}
+          message="Are you sure you want to delete contact? These changes cannot be undone."
+          size="medium"
+          title="Delete Contact"
+          onClose={() => setShowDeleteAlert(false)}
+          onSubmit={() => handleSubmit()}
         />
       </Container>
     </>
