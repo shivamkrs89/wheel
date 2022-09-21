@@ -6,10 +6,10 @@ import { buildContactsTableColumnData } from "./utils";
 
 import { CONTACTS_DETAILS } from "../constants";
 
-const Table = () => (
+const Table = ({ setshowDeleteAlert }) => (
   <div className="w-full">
     <NeetoUITable
-      columnData={buildContactsTableColumnData()}
+      columnData={buildContactsTableColumnData(setshowDeleteAlert)}
       currentPageNumber={2}
       defaultPageSize={5}
       rowData={CONTACTS_DETAILS}
