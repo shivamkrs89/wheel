@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Formik, Form as ContactForm } from "formik";
+import { Formik, Form as FormikForm } from "formik";
 import { Button, Pane, Toastr } from "neetoui";
 import { Input, Select } from "neetoui/formik";
 
@@ -27,7 +27,7 @@ const Form = ({ onClose, isEdit }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <ContactForm className="w-full">
+        <FormikForm className="w-full">
           <Pane.Body className="space-y-8">
             <div className="flex w-full flex-row space-x-6">
               <Input
@@ -78,10 +78,11 @@ const Form = ({ onClose, isEdit }) => {
               label="Cancel"
               size="large"
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>
-        </ContactForm>
+        </FormikForm>
       )}
     </Formik>
   );
